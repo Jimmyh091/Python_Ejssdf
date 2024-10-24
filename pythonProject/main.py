@@ -134,14 +134,14 @@ def ej10(vueltas):
             if it % 2 != 0:
                 print(" " * int(vueltas - it / 2), "*" * it)
 
-    contador = vueltas
+    contador = vueltas -1
     while(contador > 0):
         if esPar:
-            if it % 2 == 0:
-                print(" " * int(vueltas - it / 2), "*" * it)
+            if contador % 2 == 0:
+                print(" " * int(vueltas - contador / 2), "*" * contador)
         else:
-            if it % 2 != 0:
-                print(" " * int(vueltas - it / 2), "*" * it)
+            if contador % 2 != 0:
+                print(" " * int(vueltas - contador / 2), "*" * contador)
         contador -= 1
 '''
     esPar = vueltas % 2 == 0
@@ -179,4 +179,4 @@ print(
 )
 ej9(5)
 print("Ejercicio 10: ")
-ej10(5)
+ej10(9)
