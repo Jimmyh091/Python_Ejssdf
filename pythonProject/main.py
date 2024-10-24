@@ -126,9 +126,13 @@ Ejercicio 10. Crea una función que imprima un mosaico rombo de anchura variable
 def ej10(vueltas):
 
     esPar = vueltas % 2 == 0
-
+    print(vueltas)
     for it in range(1, vueltas):
-        print(" " * ((vueltas - 1) / 2), "*" * it)
+        print("askiodhfadsk")
+        if esPar:
+            print(" " * ((vueltas - it) / 2), "*" * it)
+        else:
+            print("polla")
 
 def ej10Variacion(vueltas):
 
