@@ -115,8 +115,8 @@ Ejercicio 9. Crea una función que dado un número n imprima los siguientes
 
 
 def ej9(vueltas : int):
-    for it in range(1, vueltas):
-        print(str(it) * it)
+    for it in range(1, vueltas + 1):
+        print("*" * it)
 
 
 '''
@@ -134,7 +134,7 @@ def ej10(vueltas):
             if it % 2 != 0:
                 print(" " * int(vueltas - it / 2), "*" * it)
 
-    contador = vueltas -1
+    contador = vueltas - 1
     while(contador > 0):
         if esPar:
             if contador % 2 == 0:
@@ -143,16 +143,6 @@ def ej10(vueltas):
             if contador % 2 != 0:
                 print(" " * int(vueltas - contador / 2), "*" * contador)
         contador -= 1
-'''
-    esPar = vueltas % 2 == 0
-    print(vueltas)
-    for it in range(1, vueltas):
-        print("askiodhfadsk")
-        if esPar:
-            print(" " * ((vueltas - it) / 2), "*" * it)
-        else:
-            print("polla")
-            '''
 
 def ej10Variacion(vueltas):
 
@@ -175,8 +165,8 @@ print(
     "Ejercicio 6: " + str(ej6(4,30)) + "\n",
     "Ejercicio 7: " + str(ej7(3,3,3)) + "\n",
     "Ejercicio 8: " + str(ej8(23,65)) + "\n",
-    "Ejercicio 9: " + "\n"
+    "Ejercicio 9: "
 )
 ej9(5)
 print("Ejercicio 10: ")
-ej10(9)
+ej10(123)
