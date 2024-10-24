@@ -130,7 +130,7 @@ def ej10(vueltas):
         print(" " * int(vueltas - contador / 2), "*" * contador)
         contador += 2
 
-    contador = vueltas - 1 if vueltas % 2 == 0 else vueltas - 2
+    contador = vueltas - 2 if vueltas % 2 == 0 else vueltas - 2
     while (contador > 0):
         print(" " * int(vueltas - contador / 2), "*" * contador)
         contador -= 2
@@ -150,5 +150,4 @@ print(
 )
 ej9(5)
 print("Ejercicio 10: ")
-ej10(123)
-ej10mejor(9)
+ej10(5)
