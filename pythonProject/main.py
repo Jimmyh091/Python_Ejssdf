@@ -116,7 +116,7 @@ Ejercicio 9. Crea una función que dado un número n imprima los siguientes
 
 def ej9(vueltas : int):
     for it in range(1, vueltas):
-        print(it * it)
+        print(str(it) * it)
 
 
 '''
@@ -125,24 +125,27 @@ Ejercicio 10. Crea una función que imprima un mosaico rombo de anchura variable
 
 def ej10(vueltas):
 
-    for it in range(1, vueltas):
-        print(" " * vueltas - it)
-        print(it * it)
-    for it in range(1, vueltas - 1):
-        print(" " * it)
-        print(it * vueltas - it)
+    for it in range(1, vueltas + 1):
+        print(" " * (vueltas - it), str(it) * (it + it - 1))
+
+    contador = vueltas - 1
+    while contador > 0:
+        print(" " * (vueltas - contador), str(contador) * (contador + contador - 1))
+        contador -= 1
+
 
 print(
-    ej1([3,5,7,8,5,3,3,6,8]) +
-    ej2([3,56,7,7,5,4,3,5,78,3]) +
-    ej3(123) +
-    ej4('d') +
-    ej5([3,4,6,67,3,2,23,35,67,5,3,3,5]) +
-    ej6(4,30) +
-    ej7(3,4,5) +
-    ej8(23,65) +
-    ej9(5) +
-    ej10(5)
-)
 
-print(ej1([1,2]))
+    "Ejercicio 1: " + str(ej1([3,5,7,8,5,3,3,6,8])) + "\n",
+    "Ejercicio 2: " + str(ej2([3,56,7,7,5,4,3,5,78,3])) + "\n",
+    "Ejercicio 3: " + str(ej3(123)) + "\n",
+    "Ejercicio 4: " + str(ej4('d')) + "\n",
+    "Ejercicio 5: " + str(ej5([3,4,6,67,3,2,23,35,67,5,3,3,5])) + "\n",
+    "Ejercicio 6: " + str(ej6(4,30)) + "\n",
+    "Ejercicio 7: " + str(ej7(3,3,3)) + "\n",
+    "Ejercicio 8: " + str(ej8(23,65)) + "\n",
+    "Ejercicio 9: " + "\n"
+)
+ej9(5)
+print("Ejercicio 10: ")
+ej10(60)
