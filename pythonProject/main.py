@@ -125,34 +125,15 @@ Ejercicio 10. Crea una función que imprima un mosaico rombo de anchura variable
 
 def ej10(vueltas):
 
-    esPar = vueltas % 2 == 0
-    for it in range(1, vueltas + 1):
-        if esPar:
-            if it % 2 == 0:
-                print(" " * int(vueltas - it / 2), "*" * it)
-        else:
-            if it % 2 != 0:
-                print(" " * int(vueltas - it / 2), "*" * it)
+    contador = 0 if vueltas % 2 == 0 else 1
+    while contador < vueltas + 1:
+        print(" " * int(vueltas - contador / 2), "*" * contador)
+        contador += 2
 
-    contador = vueltas - 1
-    while(contador > 0):
-        if esPar:
-            if contador % 2 == 0:
-                print(" " * int(vueltas - contador / 2), "*" * contador)
-        else:
-            if contador % 2 != 0:
-                print(" " * int(vueltas - contador / 2), "*" * contador)
-        contador -= 1
-
-def ej10Variacion(vueltas):
-
-    for it in range(1, vueltas + 1):
-        print(" " * (vueltas - it), "*" * (it + it - 1))
-
-    contador = vueltas - 1
-    while contador > 0:
-        print(" " * (vueltas - contador), "*" * (contador + contador - 1))
-        contador -= 1
+    contador = vueltas - 1 if vueltas % 2 == 0 else vueltas - 2
+    while (contador > 0):
+        print(" " * int(vueltas - contador / 2), "*" * contador)
+        contador -= 2
 
 
 print(
@@ -170,3 +151,4 @@ print(
 ej9(5)
 print("Ejercicio 10: ")
 ej10(123)
+ej10mejor(9)
