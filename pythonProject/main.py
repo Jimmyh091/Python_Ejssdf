@@ -1,4 +1,5 @@
 '''pongo este comentario porque el primero sale mas claro y en cursiva no se porque'''
+import random
 
 '''
 Ejercicio 1. Crea una función que obtenga el máximo de una lista de números
@@ -135,6 +136,78 @@ def ej10(vueltas):
         print(" " * int(vueltas - contador / 2), "*" * contador)
         contador -= 2
 
+def ej11():
+    print("Bienvenido a piedra, papel o tijera\n")
+
+    puntuacionJugador = 0
+    puntuacionBot = 0
+    ronda = 1
+
+    valores = ["piedra", "papel", "tijera"]
+
+    jugar = True
+
+    while jugar:
+
+        resultado = ""
+
+        while puntuacionJugador < 3 and puntuacionBot < 3:
+            print(f"\nRonda {ronda}:")
+
+            inputJugador = ""
+            inputCorrecto = False
+
+            while not inputCorrecto:
+
+                inputJugador = input("Jugada humano: ").lower()
+
+                inputCorrecto = valores.__contains__(inputJugador)
+
+                if not inputCorrecto:
+                    print("El valor introducido es incorrecto, vuelva a introducirlo")
+
+            jugadaJugador = valores.index(inputJugador)
+            jugadaBot = int(random.randrange(0, 2))
+
+            print(f"Jugada bot: {valores.__getitem__(jugadaBot)}")
+
+            if jugadaJugador == jugadaBot:
+                print("Empate")
+            elif jugadaJugador == jugadaBot + 1 or jugadaJugador == jugadaBot - 2:
+                print("Ganas")
+                puntuacionJugador += 1
+            else:
+                print("Pierdes")
+                puntuacionBot += 1
+
+            print(f"Tu puntaje: {puntuacionJugador}")
+            print(f"puntaje del bot: {puntuacionBot}")
+
+            ronda += 1
+
+        ganador = "Jugador" if puntuacionJugador > puntuacionBot else "bot"
+        print(f"El ganador es el {ganador}")
+
+        inputResultado = ""
+        inputCorrecto = False
+
+        while not inputCorrecto:
+
+            inputJugador = input("Quieres jugar de nuevo? (y/n): ").lower()
+
+            inputCorrecto = valores.__contains__(inputJugador)
+
+            if not inputCorrecto:
+                print("El valor introducido es incorrecto, vuelva a introducirlo")
+
+        if resultado.__eq__("y"):
+            jugar = True
+
+            puntuacionJugador = 0
+            puntuacionBot = 0
+            ronda = 1
+        else:
+            jugar = False
 
 print(
 
@@ -150,4 +223,7 @@ print(
 )
 ej9(5)
 print("Ejercicio 10: ")
-ej10(5)
+ej10(50)
+
+print("\n" * 10)
+ej11()
