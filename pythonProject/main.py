@@ -249,4 +249,6 @@ print("Ejercicio 10: ")
 ej10(50)
 
 print("\n" * 10)
+ej11
+print("\n" * 10)
 ej12()
