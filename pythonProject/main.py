@@ -209,6 +209,29 @@ def ej11():
         else:
             jugar = False
 
+def ej12():
+
+    print("Bienvenido a adivina el numero")
+
+    numIntentos = 0
+    intento = 0
+    solucion = random.randrange(1, 100)
+
+    while not intento == solucion:
+
+        intento = int(input("Haga su intento: "))
+
+        if intento < solucion:
+            print("Intente mas alto")
+        elif intento > solucion:
+            print("Intente mas bajo")
+
+        numIntentos += 1
+
+    if numIntentos == 1:
+        print("QUE")
+    else:
+        print(f"Acertaste. Has tardado {numIntentos} rondas")
 print(
 
     "Ejercicio 1: " + str(ej1([3,5,7,8,5,3,3,6,8])) + "\n",
@@ -226,4 +249,4 @@ print("Ejercicio 10: ")
 ej10(50)
 
 print("\n" * 10)
-ej11()
+ej12()
